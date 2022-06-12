@@ -1,3 +1,4 @@
+from cgitb import text
 from tabnanny import verbose
 from django.db import models
 from django.utils import timezone
@@ -15,8 +16,8 @@ class Book(models.Model):
 
 class Memory(models.Model):
     book = models.ForeignKey(Book, on_delete = models.CASCADE, verbose_name = "タイトル", related_name = "memory")
-    start_date = models.DateField()
-    end_date = models.DateField()
-    memory = models.TextField
+    start_date = models.DateField(verbose_name = "読書開始日")
+    end_date = models.DateField(verbose_name = "読書終了日")
+    text = models.TextField(verbose_name = "感想", default = "感想を入力")
     def __str__(self):
-        return self.memory
+        return self.text

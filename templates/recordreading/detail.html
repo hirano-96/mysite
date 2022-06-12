@@ -1,0 +1,8 @@
+<h1>{{ book.title }}</h1>
+<h2>{{ book.author }}</h2>
+
+
+{% for memory in book.memory.all %}
+    <h3>{{ memory.start_date }}~{{ memory.end_date }}</h3>
+    <li>{{ memory.text }}</li>
+{% endfor %}

@@ -17,6 +17,7 @@ from django.urls import path,include
 from django.contrib import admin
 
 urlpatterns = [
+    path('recordreading/', include('RecordReading.urls')),
     path('myapp1/', include('myapp1.urls')),
     path('admin/', admin.site.urls),
 ]
