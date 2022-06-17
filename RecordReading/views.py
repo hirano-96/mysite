@@ -37,4 +37,12 @@ class WritingMemoryView(generic.CreateView):
     form_class = MemoryForm
     template_name = 'recordreading/register.html'
     def get_success_url(self):
-        return reverse('recordreading:book_detail', kwargs={'pk': self.object.book.pk }) 
+        return reverse('recordreading:book_detail', kwargs={'pk': self.object.book.pk })
+
+#詳細更新画面
+class UpdateMemoryView(generic.UpdateView):
+    model = Memory
+    form_class = MemoryForm
+    template_name = "recordreading/register.html"
+    def get_success_url(self):
+        return reverse('recodreading:book_detail', kwargs={'pk': self.object.book.pk })
