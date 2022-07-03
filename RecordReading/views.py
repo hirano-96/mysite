@@ -46,3 +46,15 @@ class UpdateMemoryView(generic.UpdateView):
     template_name = "recordreading/register.html"
     def get_success_url(self):
         return reverse('recodreading:book_detail', kwargs={'pk': self.object.book.pk })
+
+#感想削除画面
+class DeleteMemoryView(generic.DeleteView):
+    model = Memory
+    def get_success_url(self):
+        return reverse('myapp:book_detail', kwargs={'pk': self.object.book.pk })
+
+#タイトル削除画面
+class DeleteBookView(generic.DeleteView):
+    model = Book
+    def get_success_url(self):
+        return reverse('myapp:index')

@@ -9,4 +9,6 @@ urlpatterns = [
     path('register/book/', views.RegisterBookView.as_view(), name='registerbook'), #タイトル追加画面
     path('writing/memory/', views.WritingMemoryView.as_view(), name='writingmemory'), #詳細追加画面
     path('update/memory/<int:pk>/', views.UpdateMemoryView.as_view(), name='updatememory'), #詳細更新画面
+    path('delete/memory/<int:pk>/', views.deletememory, name='deletememory'), #詳細削除画面
+    path('delete/book/<int:pk>/', views.deletemovie, name='deletebook') # タイトル削除画面
 ]
