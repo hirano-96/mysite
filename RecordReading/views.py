@@ -21,7 +21,7 @@ class RegisterAuthorView(generic.CreateView):
     form_class = AuthorForm
     template_name = 'recordreading/register.html'
     def get_success_url(self):
-        return reverse('redordreading:registerbook')
+        return reverse('RecordReading:registerbook')
 
 #タイトル追加画面
 class RegisterBookView(generic.CreateView):
@@ -29,7 +29,7 @@ class RegisterBookView(generic.CreateView):
     form_class = BookForm
     template_name = 'recordreading/register.html'
     def get_success_url(self):
-        return reverse('recordreading:book_detail', kwargs={'pk': self.object.pk })
+        return reverse('RecordReading:book_detail', kwargs={'pk': self.object.pk })
 
 #詳細追加画面
 class WritingMemoryView(generic.CreateView):
@@ -37,7 +37,7 @@ class WritingMemoryView(generic.CreateView):
     form_class = MemoryForm
     template_name = 'recordreading/register.html'
     def get_success_url(self):
-        return reverse('recordreading:book_detail', kwargs={'pk': self.object.book.pk })
+        return reverse('RecordReading:book_detail', kwargs={'pk': self.object.book.pk })
 
 #詳細更新画面
 class UpdateMemoryView(generic.UpdateView):
@@ -45,16 +45,16 @@ class UpdateMemoryView(generic.UpdateView):
     form_class = MemoryForm
     template_name = "recordreading/register.html"
     def get_success_url(self):
-        return reverse('recodreading:book_detail', kwargs={'pk': self.object.book.pk })
+        return reverse('RecordReading:book_detail', kwargs={'pk': self.object.book.pk })
 
 #感想削除画面
 class DeleteMemoryView(generic.DeleteView):
     model = Memory
     def get_success_url(self):
-        return reverse('myapp:book_detail', kwargs={'pk': self.object.book.pk })
+        return reverse('RecordReading:book_detail', kwargs={'pk': self.object.book.pk })
 
 #タイトル削除画面
 class DeleteBookView(generic.DeleteView):
     model = Book
     def get_success_url(self):
-        return reverse('myapp:index')
+        return reverse('RecordReading:index')
