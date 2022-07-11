@@ -1,0 +1,10 @@
+<form method="POST">
+    {% csrf_token %}
+    {{memory.book}}<br>
+    {{memory.text}}<br>
+------------------------------<br>
+    {{book.title}}<br>
+    {{book.author}}<br>
+    Do you want to delete it?<br>
+    <button type="submit">OK</button>
+</form>
